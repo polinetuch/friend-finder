@@ -322,10 +322,6 @@
       $(document).ready(function() {
         $("#submit").on("click", function(event) {
           event.preventDefault();
-          //   var valid = true;
-          //   if($(".name").val() === "" && $(".photo").val() === "") {
-          //       valid = false
-          //   }
           var newUser = {
             name: $(".name")
               .val()
@@ -347,6 +343,16 @@
             ]
           };
           console.log(newUser);
+
+          $.post("/api/tables", newReservation, function(data) {
+            if (data) {
+              alert("Congratulations! You've submitted your answers!");
+            } else {
+              alert("Have you answered all the questions?");
+            }
+            $(".name").val("");
+            $(".photo").val("");
+          });
         });
       });
     </script>
