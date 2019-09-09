@@ -300,7 +300,11 @@
 
       <div class="row">
         <div class="col-lg-12">
-          <button type="button" class="btn btn-primary btn-lg btn-block">
+          <button
+            id="submit"
+            type="button"
+            class="btn btn-primary btn-lg btn-block"
+          >
             Submit
           </button>
         </div>
@@ -316,8 +320,12 @@
     </footer>
     <script>
       $(document).ready(function() {
-        $(".btn-primary").on("click", function(event) {
+        $("#submit").on("click", function(event) {
           event.preventDefault();
+          //   var valid = true;
+          //   if($(".name").val() === "" && $(".photo").val() === "") {
+          //       valid = false
+          //   }
           var newUser = {
             name: $(".name")
               .val()
