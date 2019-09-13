@@ -1,13 +1,26 @@
 // dependencies
 var friends = require("../data/friends");
 
-function apiRoutes() {
+function apiRoutes(app) {
     // display all tables
-    app.get("api/home.html", function(req, res) {
+    app.get("/api/friends", function(req, res) {
         return res.json(friends);
-    }
-    app.get("api/survey.html", function(req, res) {
-        return res.json(friends);
-    }
+    });
+    console.log(friends)
 
+    app.post("/api/friends", function(req, res) {
+        console.log(req.body.score)
+
+        // to receive user's details (name, photo and scores)
+        var newUser = req.body;
+
+        
+        console.log(newUser)
+        for (var i = 0; i < newUser.score.length; i++){
+            newUser.score[i] = parseInt(newUser.score[i])
+            console.log(newUser.score[i])
+        }
+    })
 }
+
+module.exports = apiRoutes;
