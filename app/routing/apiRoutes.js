@@ -9,6 +9,9 @@ function apiRoutes(app) {
     });
 
     app.post("/api/friends", function(req, res) {
+        var addedFriend = req.body;
+        friends.push(addedFriend);
+
         var newFriend = {
             name: req.body.name,
             photo: req.body.photo,
