@@ -20,23 +20,8 @@ function apiRoutes(app) {
         }
 
     })
-    var minimumDifference = 40;
     
-    for (var i = 0; i < friends.length; i++) {
-        var totalDifference = 0;
-        for (var j = 0; j < friends[i].length; j++) {
-            var difference = math.abs(newUser.score[j] - friends[i].score[j]);
-            totalDifference += difference;
-            if (totalDifference < minimumDifference) {
-                var matchingFriend = 0;
-                matchingFriend = i;
-                minimumDifference = totalDifference
-            }
-        }
-        // friends.push(newUser)
-        // res.json(friends[matchingFriend])
 
-    }
 }
 
 module.exports = apiRoutes;
