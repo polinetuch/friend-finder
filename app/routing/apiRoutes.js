@@ -11,16 +11,32 @@ function apiRoutes(app) {
     app.post("/api/friends", function(req, res) {
         console.log(req.body.score)
 
-        // to receive user's details (name, photo and scores)
         var newUser = req.body;
-
         
         console.log(newUser)
         for (var i = 0; i < newUser.score.length; i++){
             newUser.score[i] = parseInt(newUser.score[i])
             console.log(newUser.score[i])
         }
+
     })
+    var minimumDifference = 40;
+    
+    for (var i = 0; i < friends.length; i++) {
+        var totalDifference = 0;
+        for (var j = 0; j < friends[i].length; j++) {
+            var difference = math.abs(newUser.score[j] - friends[i].score[j]);
+            totalDifference += difference;
+            if (totalDifference < minimumDifference) {
+                var matchingFriend = 0;
+                matchingFriend = i;
+                minimumDifference = totalDifference
+            }
+        }
+        // friends.push(newUser)
+        // res.json(friends[matchingFriend])
+
+    }
 }
 
 module.exports = apiRoutes;
