@@ -10,14 +10,14 @@ app.use(express.json());
 
 // Table DATA
 // =============================================================
-var newUser = [
-  {
-    routeName: "",
-    name: "",
-    photo: "",
-    scores: "",
-  }
-];
+// var newUser = [
+//   {
+//     routeName: "",
+//     name: "",
+//     photo: "",
+//     scores: "",
+//   }
+// ];
 
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
